@@ -1,0 +1,247 @@
+.main
+  position: relative
+  height: 100%
+  overflow-y: auto
+  overflow-x: hidden
+  background-color: $base-color
+  z-index: 1
+  &.full
+    padding-top: 0
+  +MQ(XL)
+    overflow: hidden
+    padding-top: 0
+
+.fullscreen-wrapper
+  position: relative
+  width: 100%
+  height: 100%
+  min-height: 600px
+  
+.main__content
+  position: relative
+  min-height: 100%
+  padding-top: 60px
+  &.content-fullheight
+    padding: 0
+    height: 100%
+    min-height: 600px
+  +MQ(M)
+    padding-top: 70px
+    &.content-fullheight
+      padding: 0
+  +MQ(XL)
+    height: 100%
+    min-height: unset
+  +MQ(XXL)
+    padding-top: 100px
+    &.content-fullheight
+      padding: 0
+
+.main__intro
+  position: relative
+  height: 70vh
+  min-height: 460px
+  &.intro-large-title
+    min-height: 580px
+  &.intro-fullheight
+    height: 100%
+    min-height: unset
+  +MQ(XL)
+    height: auto
+    min-height: unset
+    &.intro-large-title
+      min-height: unset
+
+.intro__content
+  &.content-top
+    position: absolute
+    +center(y)
+    width: 100%
+  &.content-top-large
+    position: absolute
+    +center(y)
+    width: 100%
+  +MQ(XL)
+    &.content-top
+      position: relative
+      top: auto
+      bottom: auto
+      transform: translateY(0)
+      padding: 6.8rem 0 6rem 0
+      max-height: 310px
+    &.content-top-large
+      position: relative
+      top: auto
+      bottom: auto
+      transform: translateY(0)
+      padding: 5.8rem 0 6.2rem 0
+      max-height: 326px
+  +MQ(XXL)
+    &.content-top
+      padding: 9.8rem 0 9rem 0
+      max-height: 410px
+    &.content-top-large
+      padding: 8.4rem 0 9.2rem 0
+      max-height: 441px
+
+.intro__data
+  position: relative
+  padding: 0 2.4rem
+  margin-top: 2.8rem
+  li
+    display: block
+    margin-bottom: 0.6rem
+    &:last-of-type
+      margin-bottom: 0
+  +MQ(M)
+    padding: 0 7rem
+    margin-top: 2.8rem
+  +MQ(XL)
+    margin-top: 0
+    li
+      &:last-of-type
+        margin-bottom: 0.6rem
+  +MQ(XXL)
+    padding: 0 10rem
+    li
+      &:last-of-type
+        margin-bottom: 0.8rem
+
+.headline
+  position: relative
+  padding: 0 2.4rem
+  &.centered-mobile
+    position: absolute
+    +center(y)
+    width: 100%
+  +MQ(M)
+    padding: 0 7rem
+  +MQ(XXL)
+    padding: 0 10rem
+
+.main__media
+  position: relative
+  height: 60vh
+  min-height: 600px
+  &.media-bottom
+    height: 35vh
+    min-height: 360px
+    .rotate-object
+      +position(absolute, -55px 24px null null)
+  &.media-bottom-l
+    height: 35vh
+    min-height: 360px
+    .rotate-object
+      +position(absolute, -55px 24px null null)
+  &.media-top-l
+    height: 35vh
+    min-height: 360px
+    .rotate-object
+      +position(absolute, -55px 24px null null)
+  &.media-padding
+    left: 24px
+    width: calc( 100% - 48px )
+  +MQ(M)
+    min-height: 700px
+    &.media-bottom
+      .rotate-object
+        +position(absolute, -80px 70px null null)
+    &.media-bottom-l
+      .rotate-object
+        +position(absolute, -80px 70px null null)
+    &.media-top-l
+      .rotate-object
+        +position(absolute, -80px 70px null null)
+    &.media-padding
+      left: 70px
+      width: calc( 100% - 140px )
+  +MQ(XL)
+    height: 700px
+    &.media-bottom
+      height: calc( 100% - 326px )
+      min-height: unset
+      .rotate-object
+        +position(absolute, -80px 130px null null)
+    &.media-bottom-l
+      height: calc( 100% - 310px )
+      min-height: unset
+      .rotate-object
+        +position(absolute, -80px 270px null null)
+    &.media-top-l
+      height: calc( 100% - 310px )
+      min-height: unset
+      .rotate-object
+        +position(absolute, auto 270px -80px null)
+    &.media-padding
+      left: 70px
+      width: calc( 100% - 140px )
+  +MQ(XXL)
+    &.media-bottom
+      height: calc( 100% - 441px )
+      .rotate-object
+        +position(absolute, -105px 160px null null)
+    &.media-bottom-l
+      height: calc( 100% - 410px )
+      .rotate-object
+        +position(absolute, -105px 360px null null)
+    &.media-top-l
+      height: calc( 100% - 410px )
+      .rotate-object
+        +position(absolute, auto 360px -105px null)
+    &.media-padding
+      left: 100px
+      width: calc( 100% - 200px )
+
+.rotate-object
+  display: block
+  width: 110px
+  height: 110px
+  z-index: 12
+  img
+    display: block
+    opacity: 1
+    transition: opacity .3s ease-in-out
+  &.is-hidden
+    img
+      opacity: 0
+      transition: opacity .3s ease-in-out
+  +MQ(M)
+    width: 160px
+    height: 160px
+  +MQ(XXL)
+    width: 210px
+    height: 210px
+
+.large-trigger
+  display: block
+  position: relative
+
+.rotate-img
+  display: block
+  width: 100%
+  height: auto
+  &.rotate-img-s
+    display: block
+  &.rotate-img-m,
+  &.rotate-img-xxl
+    display: none
+  +MQ(M)
+    &.rotate-img-s,
+    &.rotate-img-xxl
+      display: none
+    &.rotate-img-m
+      display: block
+  +MQ(XXL)
+    &.rotate-img-s,
+    &.rotate-img-m
+      display: none
+    &.rotate-img-xxl
+      display: block
+
+.media__image
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover

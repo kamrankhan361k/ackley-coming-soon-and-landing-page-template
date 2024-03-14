@@ -1,0 +1,63 @@
+.header
+  +position(fixed, 0 null null 0)
+  width: 100%
+  min-width: 360px
+  height: 60px
+  background-color: $base-color
+  border-bottom: 1px solid #424264
+  z-index: 10
+  &.header-transparent
+    background-color: transparent
+    border-bottom: 1px solid rgba($white, 0.3)
+    .controls__block
+      border-left: 1px solid rgba($white, 0.3)
+      transition: border-left 0.5s ease-in-out
+  +MQ(M)
+    height: 70px
+  +MQ(XXL)
+    height: 100px
+
+.header__logo
+  position: relative
+  padding: 0 2.4rem
+  img
+    display: block
+    width: auto
+  +MQ(M)
+    padding: 0 7rem
+  +MQ(XXL)
+    padding: 0 10rem
+
+.header__controls
+  position: relative
+  height: 100%
+
+.controls__block
+  position: relative
+  height: 100%
+  border-left: 1px solid #424264
+  padding: 0 2.4rem
+  transition: border-left 0.5s ease-in-out
+  +MQ(M)
+    padding: 0 7rem
+  +MQ(XXL)
+    padding: 0 10rem
+
+.sayhello-trigger
+  display: block
+  position: relative
+  font: normal 400 1.6rem/1.2 $default-font
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+  color: $text-light
+  span
+    display: none
+  +MQ(L)
+    i
+      display: none
+    span
+      display: block
+  +MQ(XL)
+    position: relative
+
+

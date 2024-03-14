@@ -1,0 +1,67 @@
+.popup
+  +position(fixed, 0 null null 0)
+  width: 100%
+  min-width: 360px
+  height: 100%
+  overflow-y: auto
+  background-color: rgba(shade($base-color, 5%), 0.6)
+  z-index: 11
+
+.popup__container
+  position: relative
+  padding: 6rem 2.4rem
+  +MQ(M)
+    width: 100%
+    padding: 0
+
+.popup__content
+  position: relative
+  width: 100%
+  height: auto
+  background-color: $base-color
+  border: 1px solid $accent-color
+  padding: 2.4rem
+  z-index: 1
+  +MQ(M)
+    max-width: 500px
+    padding: 3rem
+    margin: 0 auto
+  +MQ(XL)
+    max-width: 640px
+  +MQ(XXL)
+    padding: 4.4rem
+    max-width: 700px
+
+.popup-close
+  display: block
+  +position(absolute, -60px 0 null null)
+  width: 50px
+  height: 60px
+  span
+    display: block
+    position: absolute
+    +center
+    width: 30px
+    height: 3px
+    background-color: transparent
+    transition: width 0.3s cubic-bezier(0.23, 0.65, 0.74, 1.09)
+    &::before,
+    &::after
+      content: ""
+      display: block
+      +position(absolute, 0 null null 0)
+      width: 100%
+      height: 100%
+      background-color: $white
+      transition: background-color 0.5s cubic-bezier(0.23, 0.65, 0.74, 1.09)
+    &::before
+      transform: rotate(45deg)
+    &::after
+      transform: rotate(-45deg)
+  +MQ(M)
+    width: 26px
+ 
+.popup-title
+  margin-bottom: 3.2rem
+  +MQ(XXL)
+    margin-bottom: 3,2rem

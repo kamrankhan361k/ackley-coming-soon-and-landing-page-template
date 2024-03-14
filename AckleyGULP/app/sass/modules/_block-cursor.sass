@@ -1,0 +1,102 @@
+.cursor
+  display: block
+  position: fixed
+  width: 200px
+  height: 200px
+  margin-top: -100px
+  margin-left: -100px
+  border-radius: 50%
+  background-color: #5B2BE0
+  opacity: 0.6
+  mix-blend-mode: screen
+  pointer-events: none
+  transform: scale(0.06)
+  transform-origin: center center
+  transition: transform 0.4s cubic-bezier(0.75, -0.27, 0.3, 1.33)
+  z-index: 9999
+  &:after
+    content: ""
+    display: block
+    +position(absolute, 70px null null 70px)
+    width: 60px
+    height: 60px
+    background-repeat: no-repeat
+    background-size: cover
+    background-image: url("../img/icons/arrow-up-right.svg")
+    transform: scale(0)
+    transition: transform 0.4s cubic-bezier(0.75, -0.27, 0.3, 1.33)
+
+@supports not (mix-blend-mode: screen)
+  .cursor
+    opacity: .5
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+  .cursor
+    visibility: hidden
+
+html
+  &.touch
+    .cursor
+      display: none
+
+.cursor-s
+  transform: scale(0.18)
+  mix-blend-mode: screen
+
+.cursor-m
+  transform: scale(0.28)
+
+.cursor-m-opposite
+  transform: scale(0.28)
+  mix-blend-mode: normal
+  background-color: $accent-color
+  opacity: 0.5
+
+.cursor-l
+  transform: scale(0.30)
+  +MQ(M)
+    transform: scale(0.35)
+  +MQ(XXL)
+    transform: scale(0.5)
+
+.cursor-l-opposite
+  transform: scale(0.30)
+  mix-blend-mode: normal
+  opacity: 0.5
+  +MQ(M)
+    transform: scale(0.35)
+  +MQ(XXL)
+    transform: scale(0.5)
+
+.cursor-l-arrow
+  transform: scale(0.30)
+  mix-blend-mode: normal
+  background-color: $accent-color
+  opacity: 1
+  &::after
+    transform: scale(1)
+  +MQ(M)
+    transform: scale(0.35)
+  +MQ(XXL)
+    transform: scale(0.5)
+
+.link-l-arrow
+  cursor: none
+
+.cursor-xl
+  transform: scale(0.5)
+  +MQ(M)
+    transform: scale(0.8)
+  +MQ(XXL)
+    transform: scale(1)
+
+.cursor-xl-opposite
+  transform: scale(0.5)
+  mix-blend-mode: normal
+  opacity: 0.5
+  +MQ(M)
+    transform: scale(0.8)
+  +MQ(XXL)
+    transform: scale(1)
+
+

@@ -1,0 +1,621 @@
+// Import Data
+@import "partials/data"
+/*! File name: main-demo.css
+   ------------------------------------------------
+
+   ------------------------------------------------
+   Table of Contents
+   ------------------------------------------------
+    1. Loader Styles
+    2. Fonts
+    3. Base CSS Styles
+    4. Cursor
+    5. Typography Styles
+    6. Buttons & Triggers Styles
+    7. Header
+    8. Intro Styles
+    9. Preview Styles
+    10. Footer Styles
+    11. Marquee Styles
+   ------------------------------------------------
+   Table of Contents End
+   ------------------------------------------------ */
+
+// Import Bourbon
+@import "bourbon"
+
+// Import Libs, Mixins and Variables
+@import "partials/layout"
+@import "partials/mixins"
+@import "partials/variables"
+
+/* ------------------------------------------------*/
+/* Loader Styles Start
+/* ------------------------------------------------*/
+.loader
+  +position(fixed, 0 0 0 0)
+  z-index: 9999
+  background-color: $base-color
+  opacity: 1
+  visibility: visible
+  transition: all 0.6s ease-in-out
+  &.loaded
+    opacity: 0
+    visibility: hidden
+
+.loader__container
+  position: absolute
+  +center
+
+.loader__circle
+  position: relative
+  width: 110px
+  height: 110px
+  background-color: transparent
+  border-radius: 50%
+  animation: whiteShadow 1s infinite
+  img
+    display: block
+    position: absolute
+    +center
+    width: auto
+  &.fade
+    animation-play-state: paused
+    opacity: 0
+    transition: opacity 0.3s ease-in-out
+
+@keyframes whiteShadow
+  0%
+    box-shadow: 0 0 0 0 rgba($accent-color, 0.5)
+    transition: box-shadow 0.3s ease-in-out
+  100%
+    box-shadow: 0 0 0 30px transparent
+    transition: box-shadow 0.4s ease-in-out
+/* ------------------------------------------------*/
+/* Loader Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Fonts Start
+/* ------------------------------------------------*/
+// Space Grotesk font
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap')
+/* ------------------------------------------------*/
+/* Fonts End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Base CSS Styles Start
+/* ------------------------------------------------*/
+*, *::before, *::after
+  box-sizing: border-box
+
+button:active, button:focus
+  outline: none !important
+
+button::-moz-focus-inner
+  border: 0 !important
+
+input::-moz-focus-inner
+  border: 0 !important
+
+::selection
+  background-color: tint($accent-color, 30%)
+  color: $text-dark
+  text-shadow: none
+
+::-webkit-scrollbar
+  display: none
+  width: 5px
+  background: rgba(0,0,0,0.0)
+  +MQ(M)
+    display: block
+
+::-webkit-scrollbar-track
+  background-color: rgba(0,0,0,0.0)
+
+::-webkit-scrollbar-thumb
+  background-color: $accent-color
+  border-radius: 10px
+
+html
+  font-family: sans-serif
+  font-size: 62.5%
+  +font-smoothing
+
+html,
+body
+  width: 100%
+  height: 100%
+
+body
+  position: relative
+  min-width: 360px
+  overflow-x: hidden !important
+  font: normal 300 1.8rem/1.6 $default-font
+  text-rendering: optimizeLegibility
+  background-color: $base-color
+
+section
+  position: relative
+  min-width: 360px
+
+a
+  text-decoration: none
+  outline: 0
+  -webkit-tap-highlight-color: rgba($black, 0)
+  transition: all $animation-duration ease-in-out
+
+img
+  display: block
+  width: 100%
+  height: auto
+
+.overflow-hidden
+  overflow: hidden !important
+
+.svg-layer
+  +position(absolute, 0 null null 0)
+  width: 100%
+  min-width: 360px
+  height: 100%
+  background-repeat: no-repeat
+  background-size: cover
+
+.svg-layer-1
+   background-image: url("../img/demo/demo-intro.svg")
+   background-position: bottom right
+
+.color-layer
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+
+.layer-dark-03
+  background-color: rgba($base-color, 0.3)
+  mix-blend-mode: multiply
+/* ------------------------------------------------*/
+/* Base CSS Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Cursor Styles Start
+/* ------------------------------------------------*/
+@import "modules/block-cursor"
+/* ------------------------------------------------*/
+/* Cursor Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Typography Styles Start
+/* ------------------------------------------------*/
+h1
+  font: normal 400 4rem/1.1 $default-font
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+  color: $text-light
+  +MQ(M)
+    font-size: 8rem
+    line-height: 1
+    margin-left: -0.4rem
+  +MQ(XXL)
+    font-size: 11rem
+    margin-left: -0.6rem
+/* ------------------------------------------------*/
+/* Typography Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Buttons & Triggers Styles Start
+/* ------------------------------------------------*/
+.btn
+  position: relative
+  display: inline-block
+  border: none
+  outline: 0
+  padding: 0
+  font: inherit
+  background-color: transparent
+  cursor: pointer
+  text-decoration: none
+  user-select: none
+  text-align: center
+  +MQ(M)
+    display: inline-block
+
+.btn-s-icon
+  display: block
+  position: relative
+  font: normal 400 1.6rem/1.2 $default-font
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+  color: $text-light
+  .btn-title
+    display: none
+  &.btn-light
+    font-weight: 400
+    color: $text-light
+    background-color: transparent
+    border: none
+  &.btn-mute
+    color: $text-light-base
+  +MQ(L)
+    .btn-title
+      display: inline-block
+    i
+      font-size: 1.5rem
+      margin-left: 0.4rem
+    span
+      display: inline-block
+  +MQ(XL)
+    position: relative
+
+.btn-icon-left
+  +MQ(L)
+    position: relative
+    .btn-title
+      margin-right: 0.4rem
+      overflow: hidden
+    .btn-icon-anim
+      display: inline-block
+      width: auto
+      height: 100%
+      overflow: hidden
+    .no-touch &:hover
+      i
+        animation: 0.4s ease-in-out 0s 1 both slideOutLeft
+
+@keyframes slideOutLeft
+  0%
+    transform: translateX(0)
+  50%
+    transform: translateX(14px)
+  51%
+    opacity: 0
+  52%
+    transform: translateX(-14px)
+    opacity: 0
+  53%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+.btn-l
+  display: block
+  height: 5rem
+  padding: 0 2rem
+  border-radius: 2.5rem
+  font: normal 400 1.4rem/4.8rem $default-font
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+  transition: color 0.3s, background-color 0.3s ease-in-out
+  +MQ(M)
+    display: inline-block
+
+.btn-light-outline
+  background-color: transparent
+  border: 1px solid $accent-color
+  color: $text-light
+
+.btn-light
+  font-weight: 500
+  background-color: $white
+  border: 1px solid $white
+  color: $black
+
+.to-top
+  display: inline-block
+  width: 30px
+  height: 44px
+  padding: 1rem 0
+  border-radius: 15px
+  +position(fixed, null 24px 24px null)
+  background-color: $white
+  overflow: hidden
+  z-index: 3
+  text-align: center
+  visibility: hidden
+  opacity: 0
+  transition: opacity 0.3s 0s, visibility 0s 0.3s
+  svg
+    display: block
+    width: 20px
+    height: auto
+    margin: 0 auto
+    fill: $base-color
+    transition: fill 0.5s
+  &.is-visible, &.fade-out
+    transition: opacity 0.3s 0s, visibility 0s 0s
+  .no-touch &:hover
+    transition: opacity 0.3s 0s, visibility 0s 0s, filter 0.5s 0s, background-color 0.5s 0s
+    background-color: $white
+    opacity: 1
+    filter: drop-shadow(0 0 1px $accent-color) brightness(1.1) drop-shadow(0 3px 10px $accent-color)
+    svg
+      fill: $black
+  &.is-visible
+    visibility: visible
+    opacity: 1
+  &.fade-out
+    opacity: 1
+  +MQ(M)
+    +position(fixed, null 20px 12px null)
+  +MQ(XXL)
+    +position(fixed, null 35px 28px null)
+/* ------------------------------------------------*/
+/* Buttons & Triggers Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Header Styles Start
+/* ------------------------------------------------*/
+.header
+  position: relative
+  width: 100%
+  min-width: 360px
+  height: 60px
+  background-color: $base-color
+  border-bottom: 1px solid #424264
+  z-index: 10
+  +MQ(M)
+    height: 70px
+  +MQ(XXL)
+    height: 100px
+
+.header__logo
+  position: relative
+  padding: 0 2.4rem
+  a
+    display: block
+  img
+    display: block
+    width: auto
+  +MQ(M)
+    padding: 0 7rem
+  +MQ(XXL)
+    padding: 0 10rem
+
+.header__controls
+  position: relative
+  height: 100%
+
+.controls__block
+  position: relative
+  height: 100%
+  border-left: 1px solid #424264
+  padding: 0 2.4rem
+  transition: border-left 0.5s ease-in-out
+  +MQ(M)
+    padding: 0 7rem
+  +MQ(XXL)
+    padding: 0 10rem
+/* ------------------------------------------------*/
+/* Header Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Intro Styles Start
+/* ------------------------------------------------*/
+.intro
+  position: relative
+  width: 100%
+  min-width: 360px
+  overflow: hidden
+  background-color: $base-color
+  border-bottom: 1px solid #424264
+
+.intro__content
+  position: relative
+  padding: 5.3rem 0 5.2rem 0
+  +MQ(M)
+    padding: 5.8rem 0 5.8rem 0
+  +MQ(XXL)
+    padding: 8.6rem 0 8.4rem 0
+
+.intro__container
+  padding: 0 2.4rem
+  +MQ(M)
+    padding: 0 7rem
+  +MQ(XXL)
+    padding: 0 10rem
+
+.headline
+
+.rotate-object
+  display: none
+  width: 160px
+  height: 160px
+  z-index: 12
+  position: absolute
+  bottom: -80px
+  +center(x)
+  img
+    display: block
+    opacity: 1
+    transition: opacity .3s ease-in-out
+  &.is-hidden
+    img
+      opacity: 0
+      transition: opacity .3s ease-in-out
+  +MQ(M)
+    display: block
+    left: auto
+    right: 70px
+    transform: translateX(0)
+    +position(absolute, null 70px -80px null)
+    width: 160px
+    height: 160px
+    opacity: 1
+  +MQ(XL)
+    +position(absolute, null 70px -80px null)
+  +MQ(XXL)
+    +position(absolute, null 100px -105px null)
+    width: 210px
+    height: 210px
+
+.rotate-img
+  display: block
+  width: 100%
+  height: auto
+  &.rotate-img-m
+    display: block
+  &.rotate-img-xxl
+    display: none
+  +MQ(XXL)
+    &.rotate-img-m
+      display: none
+    &.rotate-img-xxl
+      display: block
+/* ------------------------------------------------*/
+/* Intro Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Preview Styles Start
+/* ------------------------------------------------*/
+.demo
+  position: relative
+  width: 100%
+  min-width: 360px
+
+.demo__links
+
+.links
+  border-bottom: 1px solid #424264
+  &:last-of-type
+    border-bottom: none
+  +MQ(L)
+    border-right: 1px solid #424264
+    &:nth-of-type(even)
+      border-right: none
+    &:nth-of-type(7)
+      border-bottom: none
+      
+.links__item
+  display: block
+  padding: 6rem 2.4rem
+  +MQ(M)
+    padding: 7rem
+  +MQ(XXL)
+    padding: 10rem
+
+.links__block
+  display: block
+
+.links__image
+  border: 1px solid shade(#424264, 20%)
+  margin-bottom: 1.6rem
+  +MQ(XXL)
+    margin-bottom: 2rem
+
+.links__caption
+  font: normal 400 1.6rem/1 $default-font
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+  color: $text-light-base
+
+.links__text
+  font: normal 400 1.6rem/1 $default-font
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+  color: $text-light-base
+  transition: color 0.3s ease-in-out
+
+.links__icon
+  display: block
+  position: relative
+  width: 16px
+  height: 16px
+  text-align: center
+  transform: rotate(0)
+  transition: transform 0.4s
+  &::before,
+  &::after
+    content: ""
+    display: block
+    +position(absolute, 7px null null 0)
+    width: 16px
+    height: 2px
+    background-color: $text-light-mute
+    transition: background-color 0.3s ease-in-out
+  &::before
+    transform: rotate(0)
+  &::after
+    transform: rotate(90deg)
+
+.links__block
+  .no-touch &:hover
+    .links__text
+      color: $text-light
+    .links__icon
+      transform: rotate(180deg)
+      &::before,
+      &::after
+        background-color: $text-light
+/* ------------------------------------------------*/
+/* Preview Sections End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Footer Styles Start
+/* ------------------------------------------------*/
+.footer
+  position: relative
+  position: relative
+  width: 100%
+  min-width: 360px
+  padding: 6rem 0
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  background-image: url("../img/demo/footer-bg.webp")
+  +MQ(M)
+    padding: 7rem 0
+  +MQ(XXL)
+    padding: 10rem 0
+
+.footer__container
+  position: relative
+  padding: 0 2.4rem
+  +MQ(M)
+    padding: 0 7rem
+  +MQ(XXL)
+    padding: 0 10rem
+
+.footer__content
+
+.footer__caption
+  font: normal 400 3rem/1.1 $default-font
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+  color: $text-light
+  max-width: 520px
+  margin: 0 auto
+  +MQ(XXL)
+    font-size: 4rem
+    margin: 0 auto
+
+.footer__btngroup
+  margin-top: 3.5rem
+/* ------------------------------------------------*/
+/* Footer Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Marquee Styles End
+/* ------------------------------------------------*/
+.decor
+  position: relative
+  width: 100%
+  min-width: 360px
+  height: 60px
+  overflow: hidden
+  +MQ(M)
+    height: 70px
+  +MQ(XXL)
+    height: 100px
+    
+@import "modules/block-marquee"
+/* ------------------------------------------------*/
+/* Marquee Styles Start
+/* ------------------------------------------------*/

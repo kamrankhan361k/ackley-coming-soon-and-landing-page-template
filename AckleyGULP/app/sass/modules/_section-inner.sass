@@ -1,0 +1,150 @@
+.inner
+  +position(absolute, 0 null null 0)
+  width: 100%
+  height: 100%
+  overflow-y: auto
+  overflow-x: hidden
+  background-color: $base-color
+  z-index: 8
+  +MQ(XL)
+    overflow: hidden
+
+.inner__content
+  position: relative
+  padding-top: 60px
+  background-color: $base-color
+  +MQ(M)
+    padding-top: 70px
+  +MQ(XL)
+    width: calc( 100% - 200px )
+    height: 100%
+    min-height: 600px
+    overflow-y: auto
+    overflow-x: hidden
+  +MQ(XXL)
+    width: calc( 100% - 260px )
+    padding-top: 100px
+
+.inner__blocks
+
+.inner__container
+  position: relative
+  padding: 6rem 0
+  border-bottom: 1px solid #424264
+  &:last-of-type
+    border-bottom: none
+  &.no-padding
+    padding: 0
+  +MQ(M)
+    padding: 7rem 0
+    &.no-padding
+      padding: 0
+  +MQ(XXL)
+    padding: 10rem 0
+    &.no-padding
+      padding: 0
+
+.content-block
+  position: relative
+  padding: 0 2.4rem
+  +MQ(M)
+    padding: 0 7rem
+  +MQ(XXL)
+    padding: 0 10rem
+
+.fullwidth-container
+  position: relative
+  width: 100%
+  height: 360px
+  +MQ(M)
+    height: 500px
+  +MQ(XXL)
+    height: 700px
+
+.media-container
+  position: relative
+  width: 100%
+  height: 360px
+  +MQ(M)
+    height: 500px
+  +MQ(L)
+    width: 100%
+    height: 100%
+
+.padding-block
+  padding: 6rem 2.4rem
+  +MQ(M)
+    padding: 7rem
+  +MQ(XXL)
+    padding: 10rem
+
+.four-sells-block
+  position: relative
+  border-bottom: 1px solid #424264
+  &:last-of-type
+    border-bottom: none
+  +MQ(M)
+    border-right: 1px solid #424264
+    &:nth-of-type(2),
+    &:nth-of-type(4)
+      border-right: none
+    &:nth-of-type(3)
+      border-bottom: none
+  +MQ(XL)
+    border-bottom: none
+    &:nth-of-type(2)
+      border-right: 1px solid #424264
+      
+.three-sells-block
+  position: relative
+  border-bottom: 1px solid #424264
+  &:last-of-type
+    border-bottom: none
+  +MQ(L)
+    border-bottom: none
+    border-right: 1px solid #424264
+    &:last-of-type
+      border-right: none
+
+.two-sells-block
+  position: relative
+  border-bottom: 1px solid #424264
+  &:last-of-type
+    border-bottom: none
+  +MQ(L)
+    border-right: 1px solid #424264
+    border-bottom: none
+    &:last-of-type
+      border-right: none
+
+.two-sells-block-reverse
+  position: relative
+  border-bottom: 1px solid #424264
+  &:first-of-type
+    border-bottom: none
+  +MQ(L)
+    border-right: 1px solid #424264
+    &:last-of-type
+      border-right: none
+      border-bottom: none
+
+.inner__image
+  position: relative
+  width: 100%
+  height: 100%
+  background-color: transparent
+  background-position: center center
+  background-size: cover
+
+.inner__media
+  position: relative
+  height: 360px
+  background-color: $base-color
+  overflow: hidden
+  +MQ(M)
+    min-height: 500px
+  +MQ(XL)
+    width: 200px
+    height: 100%
+  +MQ(XXL)
+    width: 260px

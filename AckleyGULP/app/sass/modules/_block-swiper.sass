@@ -1,0 +1,113 @@
+.swiper,
+.swiper-carousel,
+.swiper-inner
+  width: 100%
+  height: 100%
+
+.swiper
+  .swiper-slide
+    position: relative
+    width: 100%
+    height: 100%
+    background-color: transparent
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: cover
+
+.swiper-carousel
+  .swiper-slide
+    width: auto
+  img
+    width: auto
+    height: 100%
+
+.swiper-inner
+  .swiper-slide
+    position: relative
+    width: 100%
+    height: 100%
+    background-color: transparent
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: cover
+
+.swiper-nav-block-ackley
+  +position(absolute, null null 0 0)
+  width: 100%
+  height: 60px
+  z-index: 1
+  border-top: 1px solid rgba($white, 0.3)
+  &.dark
+    border-top: 1px solid #424264
+  +MQ(M)
+    height: 70px
+  +MQ(XL)
+    left: auto
+    right: 0
+    width: 200px
+  +MQ(XXL)
+    width: 260px
+    height: 100px
+
+.swiper-border-ackley
+  display: none
+  +MQ(XL)
+    display: block
+    +position(absolute, 0 200px null null)
+    width: 1px
+    height: 100%
+    background-color: rgba($white, 0.3)
+    z-index: 1
+  +MQ(XXL)
+    right: 260px
+
+.split-slider-btn-ackley-prev,
+.split-slider-btn-ackley-next
+  width: auto
+  height: 60px
+  margin-top: 0
+  top: auto
+  bottom: 0
+  color: $white
+  overflow: hidden
+  i
+    font-size: 1.6rem
+    margin: 0 1rem
+  &::after
+    display: none
+  +MQ(M)
+    height: 70px
+  +MQ(XXL)
+    height: 100px
+
+.split-slider-btn-ackley-prev
+  left: 1.4rem
+  +MQ(M)
+    left: 6rem
+  +MQ(XL)
+    left: 6rem
+    &.anim-left
+      .no-touch &:hover
+        i
+          animation: 0.4s ease-in-out 0s 1 both slideOutRight
+    
+    .no-touch &:hover
+      i
+        animation: 0.4s ease-in-out 0s 1 both slideOutDown
+  +MQ(XXL)
+    left: 9rem
+.split-slider-btn-ackley-next
+  right: 1.4rem
+  +MQ(M)
+    right: 6rem
+  +MQ(XL)
+    right: 6rem
+    &.anim-right
+      .no-touch &:hover
+        i
+          animation: 0.4s ease-in-out 0s 1 both slideOutLeft
+    .no-touch &:hover
+      i
+        animation: 0.4s ease-in-out 0s 1 both slideOutUp
+  +MQ(XXL)
+    right: 9rem

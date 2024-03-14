@@ -1,0 +1,261 @@
+.menu-trigger
+  display: block
+  position: relative
+  width: 50px
+  height: 60px
+  .menu-objects
+    display: block
+    position: absolute
+    +center
+    width: 50px
+    height: 14px
+    background-color: transparent
+    overflow: hidden
+    opacity: 1
+    transition: opacity 0.6s 0.3s ease-in-out
+    &::before,
+    &::after
+      content: ""
+      display: block
+      width: 100%
+      height: 3px
+      background-color: $white
+    &::before
+      +position(absolute, 0 null null 0)
+    &::after
+      +position(absolute, null null 0 0)
+  .menu-close
+    display: block
+    position: absolute
+    left: 50%
+    top: 50%
+    bottom: auto
+    right: auto
+    width: 30px
+    height: 3px
+    background-color: transparent
+    transform: translateX(-50%) translateY(-50%) scale3d(0,0,0)
+    transition: transform 0.3s cubic-bezier(0.23, 0.65, 0.74, 1.09)
+    &::before,
+    &::after
+      content: ""
+      display: block
+      +position(absolute, 0 null null 0)
+      width: 100%
+      height: 100%
+      background-color: $white
+      transition: background-color 0.5s cubic-bezier(0.23, 0.65, 0.74, 1.09)
+    &::before
+      transform: rotate(45deg)
+    &::after
+      transform: rotate(-45deg)
+  &.menu-opened
+    .menu-objects
+      opacity: 0
+      transition: opacity 0.6s ease-in-out
+    .menu-close
+      transform: translateX(-50%) translateY(-50%) scale3d(1,1,1)
+      transition: transform 0.3s 0.6s cubic-bezier(0.23, 0.65, 0.74, 1.09)
+  +MQ(M)
+    width: 60px
+    height: 70px
+    .menu-objects
+      width: 60px
+      height: 16px
+  +MQ(XL)
+    .no-touch &:hover
+      .menu-objects
+        &::before
+          animation: .4s ease-in-out 0s 1 both slideOutRightMenu
+        &::after
+          animation: .4s ease-in-out 0s 1 both slideOutRightMenu
+          animation-delay: 0.15s
+  +MQ(XXL)
+    height: 100px
+
+@keyframes slideOutRightMenu
+  0%
+    transform: translateX(0)
+  50%
+    transform: translateX(60px)
+    opacity: 1
+  51%
+    opacity: 0
+  52%
+    transform: translateX(-60px)
+    opacity: 0
+  53%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+.btn
+  position: relative
+  display: inline-block
+  border: none
+  outline: 0
+  padding: 0
+  font: inherit
+  background-color: transparent
+  cursor: pointer
+  text-decoration: none
+  user-select: none
+  text-align: center
+  +MQ(M)
+    display: inline-block
+
+.btn-s
+  display: block
+  height: 4rem
+  border-radius: 2rem
+  text-align: center
+  font: normal 400 1.4rem/4rem $default-font
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+  margin-bottom: 1.4rem
+  &:last-of-type
+    margin-bottom: 0
+  span,
+  i
+    display: inline-block
+  i
+    font-size: 1.3rem
+    margin-left: 0.4rem
+  &.btn-light
+    font-weight: 500
+    color: $text-dark
+    border: 1px solid $accent-color
+    background-color: $accent-color
+  &.btn-mute
+    color: $text-light-base
+    border: 1px solid $text-light-base
+  +MQ(M)
+    display: inline-block
+    height: auto
+    border-radius: 0
+    text-align: left
+    font-size: 1.6rem
+    line-height: 1.2
+    margin-bottom: 0
+    margin-right: 4rem
+    &:last-of-type
+      margin-bottom: 0
+      margin-right: 0
+    i
+      font-size: 1.5rem
+    &.btn-light
+      font-weight: 400
+      color: $text-light
+      border: none
+      background-color: transparent
+    &.btn-mute
+      color: $text-light-base
+      border: none
+  +MQ(XL)
+    .no-touch &:hover
+      &.btn-mute
+        color: $text-light
+
+.btn-l
+  display: block
+  height: 5rem
+  padding: 0 2rem
+  border-radius: 2.5rem
+  font: normal 400 1.4rem/4.8rem $default-font
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+  transition: color 0.3s, background-color 0.3s ease-in-out
+  +MQ(M)
+    display: inline-block
+
+.btn-light-outline
+  background-color: transparent
+  border: 1px solid $accent-color
+  color: $text-light
+
+.btn-light
+  font-weight: 500
+  background-color: $white
+  border: 1px solid $white
+  color: $black
+
+.btn-dark
+  font-weight: 500
+  background-color: $accent-color
+  border: 1px solid $accent-color
+  color: $black
+
+.btn-icon-left
+  position: relative
+  .btn-title
+    margin-right: 0.4rem
+    overflow: hidden
+  .btn-icon-anim
+    display: inline-block
+    width: auto
+    height: 100%
+    overflow: hidden
+  .no-touch &:hover
+    i
+      animation: 0.4s ease-in-out 0s 1 both slideOutLeft
+.btn-icon-right
+
+@keyframes slideOutLeft
+  0%
+    transform: translateX(0)
+  50%
+    transform: translateX(14px)
+  51%
+    opacity: 0
+  52%
+    transform: translateX(-14px)
+    opacity: 0
+  53%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+@keyframes slideOutRight
+  0%
+    transform: translateX(0)
+  50%
+    transform: translateX(-14px)
+  51%
+    opacity: 0
+  52%
+    transform: translateX(14px)
+    opacity: 0
+  53%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+@keyframes slideOutDown
+  0%
+    transform: translateX(0)
+  50%
+    transform: translateY(14px)
+  51%
+    opacity: 0
+  52%
+    transform: translateY(-14px)
+    opacity: 0
+  53%
+    opacity: 1
+  100%
+    transform: translateX(0)
+
+@keyframes slideOutUp
+  0%
+    transform: translateX(0)
+  50%
+    transform: translateY(-14px)
+  51%
+    opacity: 0
+  52%
+    transform: translateY(14px)
+    opacity: 0
+  53%
+    opacity: 1
+  100%
+    transform: translateX(0)

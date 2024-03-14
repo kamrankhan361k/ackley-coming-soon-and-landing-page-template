@@ -1,0 +1,245 @@
+body
+  .header
+    opacity: 0
+    transition: background-color 0.5s, border-bottom 0.5s, opacity 0.8s 0.5s ease-in
+    &.header-transparent
+      transition: background-color 0.5s, border-bottom 0.5s, opacity 0.8s 0.5s ease-in
+  &.loaded
+    .header
+      opacity: 1
+
+.main
+  &.main-fullscreen
+    .fullscreen-bg
+      opacity: 0
+    .headline__title,
+    .media__countdown,
+    .headline__btnholder
+      opacity: 0
+      transform: translateY(30px)
+    .headline__btnholder
+      opacity: 0
+      transform: translateY(10px)
+    .marquee
+      transform: translateY(100%)
+  &.main-large-title
+    .headline
+      opacity: 0
+      transform: translateY(-30px)
+    .main__media
+      opacity: 0
+      transform: translateY(50px)
+    .marquee
+      transform: translateY(100%)
+  &.main-media-bottom
+    .headline
+      opacity: 0
+      transform: translateY(-30px)
+    .main__media
+      opacity: 0
+      transform: translateY(50px)
+  &.main-media-top
+    .headline
+      opacity: 0
+      transform: translateY(30px)
+    .main__media
+      opacity: 0
+      transform: translateY(-50px)
+  .svg-layer,
+  .intro__data
+    opacity: 0
+  .large-trigger
+    transform: scale(0)
+  &.animate-in
+    &.main-fullscreen
+      .fullscreen-bg
+        opacity: 1
+        transition: opacity .5s ease-in-out
+      .headline__title,
+      .media__countdown
+        opacity: 1
+        transform: translateY(0)
+        transition: opacity 0.5s 0s, transform 0.5s 0s ease-in-out
+      .headline__btnholder
+        opacity: 1
+        transform: translateY(0)
+        transition: opacity 0.3s 0.3s, transform 0.3s 0.3s ease-in-out
+      .marquee
+        transform: translateY(0)
+        transition: opacity 0.5s 0.5s, transform 0.5s 0.5s ease-in-out
+      .svg-layer
+        opacity: 1
+        transition: opacity 1.2s 0.8s
+    &.main-large-title
+      .headline,
+      .main__media
+        opacity: 1
+        transform: translateY(0)
+        transition: opacity 0.5s 0s, transform 0.5s 0s ease-in-out
+      .large-trigger
+        transform: scale(1)
+        transition: opacity 0.5s 0.5s, transform 0.5s 0.5s ease-in-out
+      .marquee
+        transform: translateY(0)
+        transition: opacity 0.5s 0.5s, transform 0.5s 0.5s ease-in-out
+      .svg-layer
+        opacity: 1
+        transition: opacity 1.2s 0.8s
+    &.main-media-bottom
+      .headline,
+      .main__media
+        opacity: 1
+        transform: translateY(0)
+        transition: opacity 0.5s 0s, transform 0.5s 0s ease-in-out
+      .large-trigger
+        transform: scale(1)
+        transition: opacity 0.5s 0.5s, transform 0.5s 0.5s ease-in-out
+      .intro__data
+        opacity: 1
+        transition: opacity 0.8s 0.8s
+      .svg-layer
+        opacity: 1
+        transition: opacity 1.2s 0.8s
+    &.main-media-top
+      .headline,
+      .main__media
+        opacity: 1
+        transform: translateY(0)
+        transition: opacity 0.5s 0s, transform 0.5s 0s ease-in-out
+      .large-trigger
+        transform: scale(1)
+        transition: opacity 0.5s 0.5s, transform 0.5s 0.5s ease-in-out
+      .intro__data
+        opacity: 1
+        transition: opacity 0.8s 0.8s
+      .svg-layer
+        opacity: 1
+        transition: opacity 1.2s 0.8s
+  &.animate-out
+    opacity: 0
+    visibility: hidden
+    transition: all .5s ease-in-out
+    .fullscreen-bg
+      opacity: 0
+      transition: opacity .5s ease-in-out
+
+.menu
+  opacity: 0
+  visibility: hidden
+  .svg-layer,
+  .menudata__footer
+    opacity: 0
+  .navigation
+    li
+      transform: translateY(30px)
+      opacity: 0
+  &.animate-in
+    opacity: 1
+    visibility: visible
+    .navigation
+      li
+        opacity: 1
+        transform: translateY(0)
+        &:nth-of-type(1)
+          transition: opacity 0.3s 0s, transform 0.3s 0s ease-in-out
+        &:nth-of-type(2)
+          transition: opacity 0.3s 0.1s, transform 0.3s 0.1s ease-in-out
+        &:nth-of-type(3)
+          transition: opacity 0.3s 0.2s, transform 0.3s 0.2s ease-in-out
+        &:nth-of-type(4)
+          transition: opacity 0.3s 0.3s, transform 0.3s 0.3s ease-in-out
+    .menudata__footer
+      opacity: 1
+      transition: opacity 0.8s 0.6s
+    .svg-layer
+      opacity: 1
+      transition: opacity 1.2s 0.8s
+  &.animate-out
+    opacity: 0
+    visibility: hidden
+    transition: all .5s ease-in-out
+
+.inner
+  opacity: 0
+  visibility: hidden
+  .inner__media
+    transform: translateX(100%)
+  .inner__content
+    opacity: 0
+    transform: translateY(50px)
+  &.animate-in
+    opacity: 1
+    visibility: visible
+    .inner__media
+      transform: translateX(0)
+      transition: opacity 0.5s 0s, transform 0.5s 0s ease-in-out
+    .inner__content
+      opacity: 1
+      transform: translateY(0)
+      transition: opacity 0.5s 0s, transform 0.5s 0s ease-in-out
+  &.animate-out
+    opacity: 0
+    visibility: hidden
+    transition: all .5s ease-in-out
+
+.header__socials
+  opacity: 0
+  visibility: hidden
+  transform: translateY(30px)
+  transition: visibility 0s 0s, opacity 0.5s, transform 0.5s cubic-bezier(0.23, 0.65, 0.74, 1.09)
+  &.animate-in
+    opacity: 1
+    transform: translateY(0)
+    visibility: visible
+  &.animate-out
+    opacity: 0
+    transform: translateY(-30px)
+    visibility: hidden
+    transition: visibility 0s 0.3s, opacity 0.3s 0s, transform 0.3s cubic-bezier(0.23, 0.65, 0.74, 1.09)
+  +MQ(L)
+    transform: translateY(0)
+
+.socials-trigger
+  transform: scale3d(1,1,1)
+  transition: color 0.3s, transform 0.3s cubic-bezier(0.23, 0.65, 0.74, 1.09)
+  &.is-hidden
+    transform: scale3d(0,0,0)
+
+.socials__close
+  transform: scale3d(0,0,0)
+  transition: color 0.3s, transform 0.3s cubic-bezier(0.23, 0.65, 0.74, 1.09)
+  &.is-scaled-up
+    transform: scale3d(1,1,1)
+
+.popup
+  opacity: 0
+  visibility: hidden
+  transition: visibility 0s 0s, opacity 0.3s 0s
+  .svg-layer
+    opacity: 0
+  .popup__content
+    opacity: 0
+    transform: translateY(30px)
+    transition: opacity 0.6s, transform 0.6s cubic-bezier(0.23, 0.65, 0.74, 1.09)
+  &.animate-in
+    opacity: 1
+    visibility: visible
+    .popup__content
+      opacity: 1
+      transform: translateY(0)
+    .svg-layer
+      opacity: 1
+      transition: opacity 1.2s 0.6s
+  &.animate-out
+    opacity: 0
+    visibility: hidden
+    transition: opacity 0.3s 0.6s, visibility 0s 0.9s
+    .popup__content
+      opacity: 0
+      transform: translateY(-30px)
+
+.popup-close
+  transform: scale3d(0,0,0)
+  transition: color 0.3s, transform 0.3s cubic-bezier(0.23, 0.65, 0.74, 1.09)
+  &.is-scaled-up
+    transform: scale3d(1,1,1)

@@ -1,0 +1,70 @@
+.marquee
+  +position(absolute, null null 0 0)
+  display: flex
+  align-items: center
+  overflow: hidden
+  gap: 1rem
+  user-select: none
+  height: 60px
+  &.marquee-relative
+    +position(relative, null null auto auto)
+  &:hover
+    .scroll
+      animation-play-state: paused
+  +MQ(M)
+    height: 70px
+  +MQ(XL)
+    &.marquee-relative
+      +position(absolute, null null auto auto)
+  +MQ(XXL)
+    height: 100px
+
+.marquee-content
+  display: flex
+  flex-shrink: 0
+  justify-content: space-around
+  //min-width: 100%
+  gap: 1rem
+  
+@keyframes scroll
+  from
+    transform: translateX(0)
+  to
+    transform: translateX(calc(-100% - 1rem))
+    
+.scroll
+  animation: scroll 16s linear infinite
+
+.marquee
+  background-color: #f0f0fc
+  border-top: 1px solid $base-color
+  span
+    display: block
+    white-space: nowrap
+    font: normal 500 3.6rem/1 $default-font
+    text-transform: uppercase
+    letter-spacing: 0.1rem
+    color: $text-dark
+    &::after
+      content: "*"
+      display: inline-block
+      padding: 0 0.5rem 0 1.5rem
+      color: $accent-color
+  &.opposite
+    background-color: $base-color
+    border-top: 1px solid #424264
+    span
+      font-weight: 400
+      color: $text-light-mute
+      &::after
+        color: $accent-color
+  +MQ(M)
+    span
+      font-size: 4.6rem
+      &::after
+        padding: 0 1rem 0 2rem
+  +MQ(XXL)
+    span
+      font-size: 6.4rem
+      &::after
+        padding: 0 2rem 0 3rem

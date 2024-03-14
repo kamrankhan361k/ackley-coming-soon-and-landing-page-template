@@ -1,0 +1,102 @@
+.works__gallery
+  position: relative
+
+.my-gallery
+
+.my-gallery__item
+  padding: 6rem 2.4rem
+  border-bottom: 1px solid #424264
+  &:last-of-type
+    border-bottom: none
+  +MQ(M)
+    padding: 7rem
+    border-right: 1px solid #424264
+    &:nth-of-type(2),
+    &:nth-of-type(4),
+    &:last-of-type
+      border-right: none
+    &:nth-of-type(5)
+      border-bottom: none
+  +MQ(XL)
+    &:nth-of-type(3)
+      border-right: none
+    &:nth-of-type(2),
+    &:nth-of-type(4)
+      border-right: 1px solid #424264
+    &:nth-of-type(4)
+      border-bottom: none
+  +MQ(XXL)
+    padding: 10rem
+
+.my-gallery__link
+  display: block
+  position: relative
+  width: 100%
+  height: auto
+  overflow: hidden
+  .no-touch &:hover
+    .my-gallery__image
+      transform: scale(1.05)
+
+.my-gallery__image
+  display: block
+  width: 100%
+  height: auto
+  transform: scale(1)
+  transition: all 0.5s ease-in-out
+
+.my-gallery__description
+  h4,
+  p
+    display: none
+
+.pswp__caption__center
+  padding: 20px 10px
+  h4
+    font: normal 400 2.6rem/1.1 $default-font
+    text-transform: uppercase
+    letter-spacing: 0.1rem
+    color: $text-light
+    small
+      display: block
+      font: normal 400 1.4rem/1.2 $default-font
+      text-transform: uppercase
+      letter-spacing: 0.06rem
+      color: $text-light-base
+      margin-top: 0.5rem
+  p
+    font: normal 300 1.6rem/1.4 $default-font
+    color: $text-light-base
+    margin-top: 1.4rem
+
+.pswp__counter
+  font: normal 200 2rem/44px $default-font
+  letter-spacing: -0.1rem
+  font-feature-settings: "lnum"
+
+.pswp__counter
+  font-family: $default-font
+
+.pswp__button--close
+  opacity: 1
+
+.pswp__button--arrow--left::before, .pswp__button--arrow--right::before
+  width: 44px
+  height: 44px
+
+.pswp__button--arrow--left:before
+  left: 0
+  background-position: -132px -44px
+
+.pswp__button--arrow--right:before
+  right: 0
+  background-position: -88px -44px
+
+.pswp__bg
+  background: $base-color
+
+.pswp__caption, .pswp__top-bar
+  background-color: rgba(0,0,0,.3)
+
+.pswp__button--close
+  background-color: $accent-color

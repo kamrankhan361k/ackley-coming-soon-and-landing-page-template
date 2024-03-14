@@ -1,0 +1,45 @@
+.media__countdown
+  position: relative
+  #countdown
+    position: relative
+    font: normal 400 5.4rem/1 $default-font
+    letter-spacing: normal
+    text-transform: uppercase
+    color: $text-light
+  .countdown-period
+    display: inline-block
+    margin-left: 1.4rem
+    letter-spacing: 0.1rem
+  +MQ(M)
+    #countdown
+      font-size: 8rem
+    .countdown-period
+      margin-left: 1.5rem
+  +MQ(XXL)
+    #countdown
+      font-size: 11rem
+    .countdown-period
+      margin-left: 1.6rem
+
+.media__countdown-s
+  position: relative
+  #countdown
+    position: relative
+    font: normal 400 4rem/1 $default-font
+    letter-spacing: normal
+    text-transform: uppercase
+    color: $text-light
+  .countdown-period
+    display: inline-block
+    margin-left: 1.4rem
+    letter-spacing: 0.1rem
+  +MQ(M)
+    #countdown
+      font-size: 6rem
+    .countdown-period
+      margin-left: 1.5rem
+  +MQ(XXL)
+    #countdown
+      font-size: 8rem
+    .countdown-period
+      margin-left: 1.6rem

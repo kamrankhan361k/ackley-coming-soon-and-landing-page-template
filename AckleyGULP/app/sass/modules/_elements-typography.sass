@@ -1,0 +1,297 @@
+h1
+  font: normal 400 4rem/1 $default-font
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+  color: $text-light
+  &.large
+    font-size: 5.4rem
+  +MQ(M)
+    font-size: 6rem
+    &.large
+      font-size: 8rem
+      margin-left: -0.4rem
+  +MQ(XXL)
+    font-size: 8rem
+    &.large
+      font-size: 11rem
+      margin-left: -0.6rem
+
+.typed-cursor
+  position: relative
+  display: inline-block
+  white-space: nowrap
+  color: rgba(255,255,255,0)
+  &::before
+    content: ''
+    display: block
+    +position(absolute, null -8px 7px null)
+    width: 17px
+    height: 3px
+    background-color: $accent-color
+  +MQ(M)
+    &::before
+      width: 26px
+      height: 5px
+      +position(absolute, null -15px 10px null)
+  +MQ(XXL)
+    &::before
+      width: 35px
+      height: 6px
+      +position(absolute, null -20px 12px null)
+
+h1
+  &.large
+    .typed-cursor
+      &::before
+        +position(absolute, null -8px 9px null)
+        width: 18px
+        height: 4px
+  +MQ(M)
+    &.large
+      .typed-cursor
+        &::before
+          width: 28px
+          height: 6px
+          +position(absolute, null -15px 12px null)
+  +MQ(XXL)
+    &.large
+      .typed-cursor
+        &::before
+          width: 39px
+          height: 8px
+          +position(absolute, null -20px 17px null)
+
+.headline__decorated
+  display: inline-block
+  position: relative
+  vertical-align: middle
+  &::before
+    content: url("../img/svg/50x50-coming-soon-filled.svg")
+    display: inline-block
+    vertical-align: middle
+    line-height: 1
+    padding-right: 1rem
+    margin-top: -1rem
+    max-height: 50px
+  &.filled-object-soon
+    &::before
+      content: url("../img/svg/50x50-coming-soon-filled.svg")
+  &.outline-object-soon
+    &::before
+      content: url("../img/svg/50x50-coming-soon-outline.svg")
+  &.outline-object-hello
+      &::before
+        content: url("../img/svg/50x50-hello-outline.svg")
+  +MQ(M)
+    margin-top: -1.4rem
+    &::before
+      content: url("../img/svg/80x80-coming-soon-filled.svg")
+      padding-right: 2rem
+      margin-top: -1.4rem
+      max-height: 80px
+    &.filled-object-soon
+      &::before
+        content: url("../img/svg/80x80-coming-soon-filled.svg")
+    &.outline-object-soon
+      &::before
+        content: url("../img/svg/80x80-coming-soon-outline.svg")
+    &.outline-object-hello
+      &::before
+        content: url("../img/svg/80x80-hello-outline.svg")
+  +MQ(XXL)
+    margin-top: -2rem
+    &::before
+      content: url("../img/svg/110x110-coming-soon-filled.svg")
+      padding-right: 2.4rem
+      margin-top: -2rem
+      max-height: 110px
+    &.filled-object-soon
+      &::before
+        content: url("../img/svg/110x110-coming-soon-filled.svg")
+    &.outline-object-soon
+      &::before
+        content: url("../img/svg/110x110-coming-soon-outline.svg")
+    &.outline-object-hello
+      &::before
+        content: url("../img/svg/110x110-hello-outline.svg")
+
+.headline__subtitle
+  display: inline-block
+  height: 2.6rem
+  padding: 0 1.1rem
+  font: normal 500 1.4rem/2.5rem $default-font
+  text-transform: uppercase
+  letter-spacing: 0.06rem
+  color: $accent-color
+  border: 1px solid $accent-color
+  border-radius: 1.3rem
+  margin-bottom: 3.4rem
+  i
+    font-size: 1.4rem
+
+.headline__btnholder
+  margin-top: 2.6rem
+
+h2
+  font: normal 400 4rem/1.1 $default-font
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+  color: $text-light
+  +MQ(M)
+    font-size: 5.4rem
+  +MQ(XXL)
+    font-size: 6.4rem
+    max-width: 98rem
+
+.section__subtitle
+  display: inline-block
+  height: 2.6rem
+  padding: 0 1.1rem
+  font: normal 500 1.4rem/2.5rem $default-font
+  text-transform: uppercase
+  letter-spacing: 0.06rem
+  color: tint($accent-color, 30%)
+  border: 1px solid tint($accent-color, 30%)
+  border-radius: 1.3rem
+  margin-bottom: 3.4rem
+
+.section__text
+  font: normal 300 1.8rem/1.4 $default-font
+  color: $text-light-base
+  margin-top: 2.2rem
+  a
+    color: $text-light-base
+  +MQ(XXL)
+    font-size: 2.4rem
+    max-width: 92rem
+    margin-top: 2rem
+
+h3
+  font: normal 400 3.4rem/1.1 $default-font
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+  color: $text-light
+  margin-bottom: 2.2rem
+  +MQ(XXL)
+    font-size: 4rem
+
+.block__text
+  font: normal 300 1.8rem/1.4 $default-font
+  color: $text-light-base
+  margin-bottom: 3.5rem
+  a
+    color: $text-light-base
+  +MQ(XXL)
+    font-size: 2.4rem
+
+h4
+  font: normal 400 2.6rem/1.1 $default-font
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+  color: $text-light
+
+h5
+  font: normal 400 2rem/1.1 $default-font
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+  color: $text-light
+
+p
+  font: normal 300 1.8rem/1.4 $default-font
+  color: $text-light-base
+  a
+    color: $text-light-base
+  span
+    font-weight: 500
+    color: $text-light
+  &.additional-text
+    font: normal 400 1.4rem/1.2 $default-font
+    text-transform: uppercase
+    letter-spacing: 0.06rem
+    a
+      font: normal 400 1.4rem/1.2 $default-font
+      text-transform: uppercase
+      letter-spacing: 0.06rem
+      color: $text-light-base
+    .no-touch &:hover
+      a
+        color: $text-light
+  &.copyright
+    a
+      color: $text-light
+
+.text-link
+  color: inherit
+  color: $text-light-base
+  text-decoration: none
+  background: linear-gradient(to right, rgba($text-light-base, 0.5), rgba($text-light-base, 0.5)), linear-gradient(to right, rgba($accent-color, 1), rgba($accent-color, 1))
+  background-size: 100% 1px, 0 1px
+  background-position: 100% 100%, 0 100%
+  background-repeat: no-repeat
+  transition: background-size 400ms, color 300ms
+  .no-touch &:hover
+    color: $text-light
+    background-size: 0 1px, 100% 1px
+
+.contact-link
+  color: inherit
+  color: $text-light-base
+  text-decoration: none
+  background: linear-gradient(to right, rgba($text-light-base, 0.0), rgba($text-light-base, 0.0)), linear-gradient(to right, rgba($accent-color, 1), rgba($accent-color, 1))
+  background-size: 100% 1px, 0 1px
+  background-position: 100% 100%, 0 100%
+  background-repeat: no-repeat
+  transition: background-size 400ms, color 300ms
+  .no-touch &:hover
+    color: $text-light
+    background-size: 0 1px, 100% 1px
+
+.blockquote
+  p
+    font: normal 400 2.6rem/1.4 $default-font
+    text-transform: uppercase
+    letter-spacing: 0.1rem
+    color: $text-light
+  cite
+    display: block
+    font: normal 500 1.4rem/1.2 $default-font
+    text-transform: uppercase
+    letter-spacing: 0.1rem
+    color: $text-light-mute
+    margin-top: 2.5rem
+    span
+      display: block
+
+.blockquote__icon
+  display: block
+  width: 110px
+  height: 110px
+  margin-bottom: 3rem
+
+.popup-title__subtitle
+  display: inline-block
+  height: 2.6rem
+  padding: 0 1.1rem
+  font: normal 500 1.4rem/2.5rem $default-font
+  text-transform: uppercase
+  letter-spacing: 0.06rem
+  color: tint($accent-color, 30%)
+  border: 1px solid tint($accent-color, 30%)
+  border-radius: 1.3rem
+  margin-bottom: 3.2rem
+
+.popup-title__title
+  font: normal 400 3.4rem/1.1 $default-font
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+  color: $text-light
+
+.popup-title__text
+  font: normal 300 1.8rem/1.4 $default-font
+  color: $text-light-base
+  margin-top: 2rem
+  a
+    color: $text-light-base
+  +MQ(XXL)
+    font-size: 2.4rem
+    margin-top: 1.9rem

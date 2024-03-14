@@ -1,0 +1,286 @@
+// Import Data
+@import "partials/data"
+/*! File name: main.css
+   ------------------------------------------------
+
+   ------------------------------------------------
+   Table of Contents
+   ------------------------------------------------
+    1. Template Backgrounds
+    2. Fonts
+    3. Base CSS Styles
+    4. Cursor
+    5. Transitions
+    6. Typography
+    7. Buttons & Controls
+    8. Forms and Forms Reply Groups
+    9. Animated Backgrounds
+    10. Header
+    11. Main Section
+    12. Marquee
+    13. Menu
+    14. Socials
+    15. Countdown
+    16. Swiper Slider
+    17. Popup Dialogs
+    18. Inner Sections
+    19. Skillbars
+    20. Features
+    21. Showreel
+    22. Contact Data
+    23. Gallery
+   ------------------------------------------------
+   Table of Contents End
+   ------------------------------------------------ */
+
+// Import Bourbon
+@import "bourbon"
+
+// Import Libs, Mixins and Variables
+@import "partials/layout"
+@import "partials/mixins"
+@import "partials/variables"
+
+/* ------------------------------------------------*/
+/* Template Backgrounds Start
+/* ------------------------------------------------*/
+.svg-layer-1
+   background-image: url("../img/svg/main-landscape.svg")
+.svg-layer-2
+   background-image: url("../img/svg/main-landscape-top.svg")
+.svg-layer-popup
+  background-image: url("../img/svg/svg-popup.svg")
+.svg-layer-menu
+  background-image: url("../img/svg/menu-landscape.svg")
+@media (orientation: landscape)
+  .svg-layer-1
+    background-image: url('../img/svg/main-landscape.svg')
+  .svg-layer-2
+   background-image: url("../img/svg/main-landscape-top.svg")
+@media (orientation: portrait)
+  .svg-layer-1
+    background-image: url('../img/svg/main-portrait.svg')
+  .svg-layer-2
+    background-image: url('../img/svg/main-portrait.svg')
+
+.media-image-main
+  background-image: url("https://dummyimage.com/1920x1080/424242/636363")
+
+.media-image-1
+   background-image: url("https://dummyimage.com/1920x800/666694/8281c4")
+.media-image-2
+   background-image: url("https://dummyimage.com/1920x800/666694/8281c4")
+
+.slide-1
+  background-image: url("https://dummyimage.com/1920x800/666694/8281c4")
+.slide-2
+  background-image: url("https://dummyimage.com/1920x800/545478/8281c4")
+.slide-3
+  background-image: url("https://dummyimage.com/1920x800/8080ad/5e5e91")
+
+.showreel-image-1
+  background-image: url("https://dummyimage.com/1400x600/545478/8281c4")
+
+.inner-image-1
+  background-image: url("https://dummyimage.com/1400x600/545478/8281c4")
+.inner-image-2
+  background-image: url("https://dummyimage.com/900x1200/545478/8281c4")
+
+.media-image-about
+  background-image: url("https://dummyimage.com/1200x1400/545478/8281c4")
+  +MQ(XL)
+    background-image: url("https://dummyimage.com/500x1400/545478/8281c4")
+
+.media-image-contact
+  background-image: url("https://dummyimage.com/1200x1400/545478/8281c4")
+  +MQ(XL)
+    background-image: url("https://dummyimage.com/500x1400/545478/8281c4")
+
+.inner-slide-1
+  background-image: url("https://dummyimage.com/1200x1400/545478/8281c4")
+  +MQ(XL)
+    background-image: url("https://dummyimage.com/500x1400/545478/8281c4")
+.inner-slide-2
+  background-image: url("https://dummyimage.com/1200x1400/545478/8281c4")
+  +MQ(XL)
+    background-image: url("https://dummyimage.com/500x1400/545478/8281c4")
+/* ------------------------------------------------*/
+/* Template Backgrounds End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Fonts Start
+/* ------------------------------------------------*/
+// Space Grotesk font
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap')
+/* ------------------------------------------------*/
+/* Fonts End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Base CSS Styles Start
+/* ------------------------------------------------*/
+@import "modules/base"
+/* ------------------------------------------------*/
+/* Base CSS Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Cursor Styles Start
+/* ------------------------------------------------*/
+@import "modules/block-cursor"
+/* ------------------------------------------------*/
+/* Cursor Styles End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Transitions Start
+/* ------------------------------------------------*/
+@import "modules/animations-transitions"
+/* ------------------------------------------------*/
+/* Transitions End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Typography Start
+/* ------------------------------------------------*/
+@import "modules/elements-typography"
+/* ------------------------------------------------*/
+/* Typography End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Buttons & Controls Start
+/* ------------------------------------------------*/
+@import "modules/elements-buttons"
+/* ------------------------------------------------*/
+/* Buttons & Controls End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Forms and Forms Reply Groups Start
+/* ------------------------------------------------*/
+@import "modules/elements-forms"
+/* ------------------------------------------------*/
+/* Forms and Forms Reply Groups End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Animated Backgrounds Start
+/* ------------------------------------------------*/
+@import "modules/animations-backgrounds"
+/* ------------------------------------------------*/
+/* Animated Backgrounds End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Header Start
+/* ------------------------------------------------*/
+@import "modules/block-header"
+/* ------------------------------------------------*/
+/* Header End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Main Section Start
+/* ------------------------------------------------*/
+@import "modules/section-main"
+/* ------------------------------------------------*/
+/* Main Section End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Marquee Start
+/* ------------------------------------------------*/
+@import "modules/block-marquee"
+/* ------------------------------------------------*/
+/* Marquee End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Menu Start
+/* ------------------------------------------------*/
+@import "modules/block-menu"
+/* ------------------------------------------------*/
+/* Menu End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Socials Start
+/* ------------------------------------------------*/
+@import "modules/block-socials"
+/* ------------------------------------------------*/
+/* Socials End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Countdown Start
+/* ------------------------------------------------*/
+@import "modules/block-countdown"
+/* ------------------------------------------------*/
+/* Countdown End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Swiper Slider Start
+/* ------------------------------------------------*/
+@import "modules/block-swiper"
+/* ------------------------------------------------*/
+/* Swiper Slider End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Popup Dialogs Start
+/* ------------------------------------------------*/
+@import "modules/block-popup"
+/* ------------------------------------------------*/
+/* Popup Dialogs End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Inner Sections Start
+/* ------------------------------------------------*/
+@import "modules/section-inner"
+/* ------------------------------------------------*/
+/* Inner Sections End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Skillbars Start
+/* ------------------------------------------------*/
+@import "modules/block-skillbars"
+/* ------------------------------------------------*/
+/* Skillbars End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Features Start
+/* ------------------------------------------------*/
+@import "modules/block-features"
+/* ------------------------------------------------*/
+/* Features End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Showreel Start
+/* ------------------------------------------------*/
+@import "modules/block-showreel"
+/* ------------------------------------------------*/
+/* Showreel End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Contact Data Start
+/* ------------------------------------------------*/
+@import "modules/block-contactdata"
+/* ------------------------------------------------*/
+/* Contact Data End
+/* ------------------------------------------------*/
+
+/* ------------------------------------------------*/
+/* Gallery Start
+/* ------------------------------------------------*/
+@import "modules/block-gallery"
+/* ------------------------------------------------*/
+/* Gallery End
+/* ------------------------------------------------*/
